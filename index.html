@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Weather</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="card">
+            <div class="search">
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Enter location" autocomplete="off">
+                    <button><img src="images/search.png"></button>
+                </div>
+                <div id="autocomplete-results"></div>                
+            </div>
+
+
+
+        
+
+            <div class="error">
+                <p>Invalid city name</p>
+            </div>
+
+            <div class="weather">
+                <img src="images/clear.png" class="weather-icon" id="Weather-icon">
+                <h3 class="description" id = "weather-description"> Sunny </h3>
+                <h1 class="temp" id="temp-display"> 75F </h1>
+                <h2 class="city" id="city-name"> Austin </h2>
+                <div class="multi-button">
+                <button class="multi-button_button" id="Fahrenheit"><span> F°</span></button>
+                <button class="multi-button_button" id="Celsius"></><span>C°</span></button>
+                </div>
+
+                <div class="details"> 
+                    <div class="col">
+                        <img src="images/humidity.png">
+                        <div>
+                            <p class="humidity" id="humidity-display"> </p>
+                            <p> </p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="images/precipitation.png">
+                        <div>
+                            <p class="precipitation" id="precipitation"> </p>
+                        </div>
+                    </div>
+                
+                    <div class="col">
+                        <img src="images/wind.png">
+                        <div>
+                            <p class="wind" id="wind-speed"> </p>
+                            <p> </p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                
+                <section class="antialiased bg-gray-100 text-gray-600 h-screen px-4">
+                    <div class="flex flex-col justify-center h-full">
+                        <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+                            <header class="px-5 py-4 border-b border-gray-100">
+                                <h3 class="font-semibold text-gray-800">Hourly Forecast</h3>
+                            </header>
+                            <div class="p-3">
+                                <div class="overflow-x-auto">
+                                    <div class ="hourly-slider">
+                                        <table class="table-auto w-full">
+                                        <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
+                                            <tr>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-left"></div>
+                                                </th>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-center"></div>
+                                                </th>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-left"></div>
+                                                </th>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-left"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-sm divide-y divide-gray-100" id="hourlyWeatherData">
+                                            <!-- Hourly data will be inserted here using JavaScript -->
+                                        </tbody>
+                                        </table>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <h3 class="forecast-list">5-day Forecast</h3>
+                <section class="card-list" id="forecast-list">
+                    
+                    <article class="card">
+                        <header class = "card-header">
+                            <p class="day-name">Monday</p>
+                            <h3 class ="day-weather_condition">Sunny</h3>
+                            <h3 class="day-temp">75F</h3>
+                        </header>
+                    </article>
+                
+                    <article class="card">
+                        <header class = "card-header">
+                            <p class="day-name">Tuesday</p>
+                            <h3 class ="day-weather_condition">Sunny</h3>
+                            <h3 class="day-temp">75F</h3>
+                        </header>
+                    </article>
+                
+                    <article class="card">
+                        <header class = "card-header">
+                            <p class="day-name">Wednesday</p>
+                            <h3 class ="day-weather_condition">Sunny</h3>
+                            <h3 class="day-temp">75F</h3>
+                        </header>
+                    </article>
+                
+                    <article class="card">
+                        <header class = "card-header">
+                            <p class="day-name">Thursday</p>
+                            <h3 class ="day-weather_condition">Sunny</h3>
+                            <h3 class="day-temp">75F</h3>
+                        </header>
+                    </article>
+                
+                    <article class="card">
+                        <header class = "card-header">
+                            <p class="day-name">Friday</p>
+                            <h3 class ="day-weather_condition">Sunny</h3>
+                            <h3 class="day-temp">75F</h3>
+                        </header>
+                    </article>
+                </section>
+
+        
+                
+                
+                
+
+
+            </div>
+
+            
+            
+            
+        </div>
+
+
+        
+        
+
+        <script src="script.js"></script>
+
+    </body>
+</html>

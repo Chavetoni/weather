@@ -25,17 +25,22 @@ const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?units=i
 // const oneCallApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=current,minutely,daily,alerts&appid=${apiKey}`;
 // const hourlyForecastApiUrl = `https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid=${apiKey}`;
 
+let debounceTimeout;
+searchBox.addEventListener('input', function() {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(async function () {
+        const autocompleteResults = document.getElementById('autocomplete-results');
+        if ( searchBox.value.length >= 3) {
+            const suggestions = await getSuggestions(searchBox.value);
+            showSuggestions(suggestions);
+        } else {
+            autocompleteResults.innerHTML = ' ';
+            autocompleteResults.classList.add('hidden');
 
-searchBox.addEventListener('input', async function() {
-    const autocompleteResults = document.getElementById('autocomplete-results');
-    if (searchBox.value.length >= 3) { // Only request suggestions for inputs of 3 or more characters
-        const suggestions = await getSuggestions(searchBox.value);
-        showSuggestions(suggestions);
-    } else if (searchBox.value.length < 1) {
-        autocompleteResults.innerHTML = '';
-        autocompleteResults.classList.add('hidden');
-    }
+        }
+    }, 300);
 });
+
 
 searchButton.addEventListener("click", () => {
     checkWeather(searchBox.value);
@@ -126,7 +131,7 @@ async function checkWeather(city){
            
             // // Display weather icon
             const weatherIconId= data.weather[0].icon;
-            const iconUrl = `http://openweathermap.org/img/wn/${weatherIconId}@4x.png`;
+            const iconUrl = `https://openweathermap.org/img/wn/${weatherIconId}@4x.png`;
             weatherIcon.src = iconUrl;
             ////////////////////////
             

@@ -86,7 +86,7 @@ body{
     max-width: 800px;  */
     color: #fff;
     /* margin: 2vh auto;  */
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 40px 2vw; /* Use viewport width for dynamic padding */
     text-align: center;
 
@@ -94,6 +94,7 @@ body{
 }
 
 .search{
+    margin-top: 20px;
     position: relative;
     width: 100%;
 }
@@ -207,7 +208,8 @@ body{
 
 .weather-icon{
     width: 170px;
-    margin-top: 30px;
+    margin-top: -15px;
+    margin-bottom: -107px;
     opacity: 0;
     transform: translateY(-50px);
     animation: slideInAfterDelay 2s 1 forwards;
@@ -235,7 +237,8 @@ body{
 .weather h3{
     font-size: 25px;
     font-weight: 400;
-    margin-top: -10px;
+    margin-top: 70px;
+    margin-bottom: -12px;
     opacity: 0;
     transform: translateY(-50px);
     animation: slideInAfterDelay 2s 1 forwards;
@@ -245,8 +248,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 360px;
     margin-top: 50px;
+    margin-bottom: -60px;
     opacity: 0;
     transform: translateY(-50px);
     animation: slideInAfterDelay 0.5s 0.5 forwards;
@@ -441,7 +445,14 @@ body{
         border-radius: 4px;         /* roundness of the track */
     }
 
-    
+    .city {
+        font-size: 24px;
+        font-weight:600;
+        margin-bottom: 10px;
+        opacity: 0;
+        transform: translate(-50px);
+        animation: slideInAfterDelay 2s 1 forwards;
+    }
     
 
 

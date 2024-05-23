@@ -123,7 +123,7 @@ async function checkWeather(city){
             const totalCurrentPrecipitation = currentRain + currentSnow;
             const weatherDescription = data.weather[0].description;
             document.getElementById('weather-description').textContent = weatherDescription.charAt(0).toUpperCase() + weatherDescription.slice(1);  
-            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".city").innerHTML = `${data.name}, ${data.sys.country}`;
             document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
             document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + " mph";
             document.querySelector(".precipitation").innerHTML = totalCurrentPrecipitation + " mm/h";

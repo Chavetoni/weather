@@ -445,6 +445,11 @@ body{
         border-radius: 4px;         /* roundness of the track */
     }
 
+    .hourly-slider table th,
+    .hourly-slider table td {
+        padding: 13px;
+    }
+
     .city {
         font-size: 24px;
         font-weight:600;

@@ -231,11 +231,14 @@ async function checkWeather(city){
                     if (data && data.forecast && data.forecast.forecastday && data.forecast.forecastday[0]) {
                         const hourlyData = data.forecast.forecastday[0].hour;
                         displayHourlyData(hourlyData);
+                        document.getElementById("hourlyForecastSection").style.display = "block";
                     } else {
                         console.error("Unexpected data format from WeatherAPI");
+                        document.getElementById("hourlyForecastSection").style.display = "none";
                     }
                 } catch (error) {
                     console.error("Error fetching hourly forecast:", error);
+                    document.getElementById("hourlyForecastSection").style.display = "none";
                 }
             }
             

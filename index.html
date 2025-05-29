@@ -16,55 +16,37 @@
                 <div id="autocomplete-results"></div>                
             </div>
 
-
-
-        
-
             <div class="error">
                 <p>Invalid city name</p>
             </div>
 
             <div class="weather">
-                <h3 class="city" id="city-name"> Austin </h3>
-                <img src="images/clear.png" class="weather-icon" id="Weather-icon">
-                <h3 class="description" id = "weather-description"> Sunny </h3>
-                <h1 class="temp" id="temp-display"> 75F </h1>
-                <div class="multi-button">
-                <button class="multi-button_button" id="Fahrenheit"><span> F°</span></button>
-                <button class="multi-button_button" id="Celsius"></><span>C°</span></button>
-                </div>
+                <h3 class="city" id="city-name"> City </h3> <img src="images/clear.png" class="weather-icon" id="Weather-icon">
+                <h3 class="description" id = "weather-description"> Weather </h3> <h1 class="temp" id="temp-display"> --°F </h1> <div class="multi-button">
+                    <button class="multi-button_button" id="Fahrenheit"><span>F°</span></button>
+                    <button class="multi-button_button" id="Celsius"><span>C°</span></button> </div>
 
                 <div class="details"> 
                     <div class="col">
                         <img src="images/humidity.png">
                         <div>
-                            <p class="humidity" id="humidity-display"> </p>
-                            <p> </p>
-                        </div>
+                            <p class="humidity" id="humidity-display"> --% </p> <p>Humidity</p> </div>
                     </div>
 
                     <div class="col">
                         <img src="images/precipitation.png">
                         <div>
-                            <p class="precipitation" id="precipitation"> </p>
-                        </div>
+                            <p class="precipitation" id="precipitation"> -- mm/h </p> <p>Precipitation</p> </div>
                     </div>
                 
                     <div class="col">
                         <img src="images/wind.png">
                         <div>
-                            <p class="wind" id="wind-speed"> </p>
-                            <p> </p>
-                        </div>
+                            <p class="wind" id="wind-speed"> -- mph </p> <p>Wind Speed</p> </div>
                     </div>
-
-
                 </div>
-
                 
-                <div id = "hourlyForecastSection">
-                    <section class="antialiased bg-gray-100 text-gray-600 h-screen px-4">
-                        <div class="flex flex-col justify-center h-full">
+                <div id="hourlyForecastSection" style="display: none;"> <section class="antialiased bg-gray-100 text-gray-600 h-screen px-4"> <div class="flex flex-col justify-center h-full">
                             <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
                                 <header class="px-5 py-4 border-b border-gray-100">
                                     <h3 class="font-semibold text-gray-800">Hourly Forecast</h3>
@@ -76,22 +58,21 @@
                                             <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                                                 <tr>
                                                     <th class="p-2 whitespace-nowrap">
-                                                        <div class="font-semibold text-left"></div>
+                                                        <div class="font-semibold text-left">Time</div>
                                                     </th>
                                                     <th class="p-2 whitespace-nowrap">
-                                                        <div class="font-semibold text-center"></div>
+                                                        <div class="font-semibold text-center">Forecast</div>
                                                     </th>
                                                     <th class="p-2 whitespace-nowrap">
-                                                        <div class="font-semibold text-left"></div>
+                                                        <div class="font-semibold text-left">Condition</div>
                                                     </th>
                                                     <th class="p-2 whitespace-nowrap">
-                                                        <div class="font-semibold text-left"></div>
+                                                        <div class="font-semibold text-left">Temp</div>
                                                     </th>
                                                 </tr>
                                             </thead>
                                             <tbody class="text-sm divide-y divide-gray-100" id="hourlyWeatherData">
-                                                <!-- Hourly data will be inserted here using JavaScript -->
-                                            </tbody>
+                                                </tbody>
                                             </table>
                                         </div> 
                                     </div>
@@ -103,66 +84,9 @@
                 
                 <h3 class="forecast-list">5-day Forecast</h3>
                 <section class="card-list" id="forecast-list">
-                    
-                    <article class="card">
-                        <header class = "card-header">
-                            <p class="day-name">Monday</p>
-                            <h3 class ="day-weather_condition">Sunny</h3>
-                            <h3 class="day-temp">75F</h3>
-                        </header>
-                    </article>
-                
-                    <article class="card">
-                        <header class = "card-header">
-                            <p class="day-name">Tuesday</p>
-                            <h3 class ="day-weather_condition">Sunny</h3>
-                            <h3 class="day-temp">75F</h3>
-                        </header>
-                    </article>
-                
-                    <article class="card">
-                        <header class = "card-header">
-                            <p class="day-name">Wednesday</p>
-                            <h3 class ="day-weather_condition">Sunny</h3>
-                            <h3 class="day-temp">75F</h3>
-                        </header>
-                    </article>
-                
-                    <article class="card">
-                        <header class = "card-header">
-                            <p class="day-name">Thursday</p>
-                            <h3 class ="day-weather_condition">Sunny</h3>
-                            <h3 class="day-temp">75F</h3>
-                        </header>
-                    </article>
-                
-                    <article class="card">
-                        <header class = "card-header">
-                            <p class="day-name">Friday</p>
-                            <h3 class ="day-weather_condition">Sunny</h3>
-                            <h3 class="day-temp">75F</h3>
-                        </header>
-                    </article>
-                </section>
-
-        
-                
-                
-                
-
-
+                    </section>
             </div>
-
-            
-            
-            
         </div>
-
-
         
-        
-
-        <script src="script.js"></script>
-
-    </body>
+        <script src="script.js" defer></script> </body>
 </html>

@@ -1,10 +1,10 @@
 //key from openweathermap.org
-const apiKey = "89af8fdb8fee4a09fd866ff08bfa4d20"; // Replace with your OpenWeatherMap API key if this one is inactive
+const apiKey = "89af8fdb8fee4a09fd866ff08bfa4d20"; 
 // url from openweathermap.org
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
 
-const weatherAPIKey = "f2dde0fe150d42b2beb192615231708"; // Replace with your WeatherAPI API key if this one is inactive
-const weatherAPIForecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}`; // Changed to https
+const weatherAPIKey = "f2dde0fe150d42b2beb192615231708"; 
+const weatherAPIForecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}`; 
 
 
 const searchBox = document.querySelector(".search input");
@@ -17,8 +17,8 @@ const celsiusButton = document.getElementById('Celsius');
 let temperatureInCelsius, temperatureInFahrenheit;
 
 
-const autocompleteUrl = 'https://us1.locationiq.com/v1/autocomplete.php?key=pk.4b39d2cd153fd58068a3773ebe8f28ee&q='; // Replace with your LocationIQ API key if needed
-// const oneCallApiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude=minutely,daily,alerts&appid=${apiKey}`; // Keep for future refactoring
+const autocompleteUrl = 'https://us1.locationiq.com/v1/autocomplete.php?key=pk.4b39d2cd153fd58068a3773ebe8f28ee&q='; 
+// const oneCallApiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude=minutely,daily,alerts&appid=${apiKey}`;
 const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?units=imperial&q=`;
 
 let debounceTimeout;
@@ -61,7 +61,7 @@ celsiusButton.addEventListener('click', () => {
 
 function switchTemperature(unit) {
     if (typeof temperatureInFahrenheit === 'undefined' || typeof temperatureInCelsius === 'undefined') {
-        // Temperatures not loaded yet
+       
         return;
     }
     const displayTemperature = unit === 'F' ? temperatureInFahrenheit : temperatureInCelsius;
@@ -93,7 +93,7 @@ async function checkWeather(city){
     if(response.status == 404){
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
-        document.getElementById("hourlyForecastSection").style.display = "none"; // Hide hourly forecast on error
+        document.getElementById("hourlyForecastSection").style.display = "none"; 
     } else {
         var data = await response.json();
         
@@ -115,7 +115,7 @@ async function checkWeather(city){
         document.querySelector(".city").innerHTML = `${data.name}, ${data.sys.country}`;
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + " mph";
-        document.querySelector(".precipitation").innerHTML = totalCurrentPrecipitation.toFixed(2) + " mm/h"; // Added toFixed for better display
+        document.querySelector(".precipitation").innerHTML = totalCurrentPrecipitation.toFixed(2) + " mm/h";
        
         const weatherIconId= data.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${weatherIconId}@4x.png`;
@@ -211,7 +211,7 @@ async function fetchHourlyForecast(city) {
 
 function displayHourlyData(hourlyData) {
     const tbody = document.getElementById("hourlyWeatherData");
-    tbody.innerHTML = ''; // Clear previous data
+    tbody.innerHTML = ''; 
     
     hourlyData.forEach(hour => {
         const time = new Date(hour.time_epoch * 1000).getHours(); 
@@ -263,13 +263,13 @@ function showSuggestions(results) {
     if (results && results.length > 0) {
         autocompleteResults.classList.remove('hidden');
         var topResults = results.slice(0, 4);
-        var suggestionHTML = topResults.map(result => `<li class="suggestion" data-city="${result.display_name}">${result.display_name}</li>`).join(''); // Added data-city for clarity
+        var suggestionHTML = topResults.map(result => `<li class="suggestion" data-city="${result.display_name}">${result.display_name}</li>`).join(''); 
         autocompleteResults.innerHTML = suggestionHTML;
 
         var suggestions = document.querySelectorAll(".suggestion");
         suggestions.forEach(suggestion => {
             suggestion.addEventListener("click", function(event) {
-                searchBox.value = event.target.dataset.city || event.target.textContent; // Use data-city or textContent
+                searchBox.value = event.target.dataset.city || event.target.textContent; 
                 checkWeather(searchBox.value);
                 autocompleteResults.innerHTML = '';
                 autocompleteResults.classList.add('hidden');
